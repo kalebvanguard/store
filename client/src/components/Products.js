@@ -26,10 +26,17 @@ class Products extends React.Component {
           <Card.Meta>{ product.department }</Card.Meta>
           <Card.Description>{ product.description }</Card.Description>
         </Card.Content>
+
         <Card.Content extra>
-          <Button as={Link} to={`/products/${product.id}`}>
-            View
-          </Button>
+            <div class="ui buttons">
+              <Button color="green" as={Link} to={`/products/${product.id}`}>
+                View
+              </Button>
+              <div class="or"></div>
+              <Button color="blue" as={Link} to={`/products/${product.id}`}>
+                comment
+              </Button>
+            </div>
         </Card.Content>
       </Card>
     ))

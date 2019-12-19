@@ -2,8 +2,10 @@ import React from "react";
 import axios from "axios";
 import { Button, Header, Segment, } from "semantic-ui-react";
 
+
+
 class ProductsView extends React.Component {
-  state = { product: {}, };
+  state = { product: {}, reviews: [], };
 
   componentDidMount() {
     const { id, } = this.props.match.params;
@@ -24,12 +26,18 @@ class ProductsView extends React.Component {
           <Header as="h5">${ price }</Header>          
           <Header as="p">{ description }</Header>          
         </Segment>
+
         <br />
         <br />
-        <Button color="black" onClick={this.props.history.goBack}>
-          Back
-        </Button>
+
+
+        <div class="ui buttons">
+            <button class="ui blue button">Comment</button>
+            <div class="or"></div>
+            <button class="ui button"onClick={this.props.history.goBack}>Back</button>
+          </div>
       </div>
+      
     );
   };
 };
